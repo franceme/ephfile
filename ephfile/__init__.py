@@ -32,6 +32,9 @@ class ephfile(object):
 					with open(self.foil,"a+") as writer:
 						writer.write(contz)
 
+		if not create and os.path.exists(self.foil):
+			os.remove(self.foil)
+
 	@property
 	def contents(self):
 		with open(self.foil,'r') as reader:
